@@ -1,0 +1,308 @@
+
+/* Fonts */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../fonts/BarlowSemiCondensed-Bold.woff2") format("woff2"),
+    url("../fonts/BarlowSemiCondensed-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2"),
+    url("../fonts/BarlowSemiCondensed-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", "Arial", sans-serif;
+  background-image: radial-gradient(rgba(31, 55, 87, 1), rgba(19, 21, 55, 1));
+}
+
+.win-shadow {
+  box-shadow: 0px 0px 0px 50px rgba(255, 255, 255, 0.05),
+    0px 0px 0px 100px rgba(255, 255, 255, 0.05),
+    0px 0px 0px 150px rgba(255, 255, 255, 0.05);
+}
+
+.shadow {
+  box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.05);
+}
+
+/* Header  */
+.header {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid rgba(255, 255, 255, 0.29);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 700px;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__score {
+  background-image: linear-gradient(
+    rgba(243, 243, 243, 1),
+    rgba(255, 255, 255, 1)
+  );
+  min-width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.score__inner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 16px;
+}
+
+.score__title {
+  text-transform: uppercase;
+  color: rgba(42, 69, 194, 1);
+  display: inline-block;
+  letter-spacing: 2.5px;
+}
+
+.score__text {
+  font-size: 64px;
+  font-weight: 700;
+  color: rgba(86, 84, 104, 1);
+}
+
+/* Game zone */
+
+.game-zone {
+}
+.game-zone__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 80px;
+  row-gap: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 476px;
+  background-image: url(../img/path.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game-zone__button:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.game-zone__button {
+  place-self: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.05);
+  }
+}
+.game-zone__img {
+  width: 198px;
+  height: 203px;
+  pointer-events: none;
+}
+/* game zone end */
+
+/* Game picker */
+.game-zone-picker {
+  width: 100%;
+  display: none;
+}
+.game-zone-picker__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+}
+.game-zone__picker__part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.picker {
+}
+.part__title {
+  margin-bottom: 63px;
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 3px 0px #00000032;
+}
+.part__img {
+  border-radius: 50%;
+}
+.game-zone-picker__status {
+  display: none;
+}
+.status {
+}
+.status__title {
+  margin-bottom: 16px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 67.2px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  color: white;
+  width: 241px;
+  &:hover {
+    cursor: pointer;
+    opacity: 70%;
+  }
+}
+.status__refresh {
+  border-radius: 8px;
+  padding-top: 15px;
+  padding-bottom: 14px;
+  padding-left: 60px;
+  padding-right: 62px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 2.5px;
+  color: #3b4262;
+  transition: opacity 0.3s ease;
+  width: 220px;
+  margin-left: 10px;
+
+  &:hover {
+    opacity: 70%;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  &:active {
+    background-color: rgb(52, 106, 153);
+    color: white;
+  }
+}
+
+/* MODAL */
+@import url("https://fonts.googleapis.com/css2?family=Varela&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  margin-left: 1350px;
+  margin-top: -50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.show-btn {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  padding: 10.5px 36.5px;
+  border-radius: 8px;
+  transition: background 0.5s;
+
+  &:hover {
+    background-color: #3a3d40;
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 400px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  padding-left: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 32px;
+  color: #3b4262;
+  margin-bottom: 48px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.modal-title {
+  margin-bottom: 1.5rem;
+}
+
+.close-btn {
+  color: #222;
+  font-size: 2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+p {
+  width: 550px;
+  font-size: 15px;
+}

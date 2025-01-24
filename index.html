@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05|06</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <img src="./img/logo.svg" alt="Logo" />
+        <div class="header__score score">
+          <div class="score__inner">
+            <strong class="score__title">Score</strong>
+            <span class="score__text" id="score">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--start game zone -->
+    <section class="game-zone" id="gameZone">
+      <div class="game-zone__container">
+        <button class="game-zone__button js-hand">
+          <img class="game-zone__img" src="img/paper.svg" alt="paper" />
+        </button>
+        <button class="game-zone__button js-hand">
+          <img class="game-zone__img" src="img/scissors.svg" alt="scissors" />
+        </button>
+        <button class="game-zone__button js-hand">
+          <img class="game-zone__img" src="img/rock.svg" alt="rock" />
+        </button>
+      </div>
+    </section>
+    <!-- game zone end -->
+
+    <!-- Game zone picker start-->
+    <section class="game-zone-picker" id="gameZonePicker">
+      <div class="game-zone-picker__container">
+        <div class="game-zone__picker__part picker">
+          <h3 class="part__title">You picked</h3>
+          <img id="humanHand" class="part__img" src="img/paper.svg" alt="" />
+        </div>
+        <div class="game-zone-picker__status status" id="status">
+          <h2 class="status__title">You Win</h2>
+          <button class="status__refresh" id="refreshGame">Play Again</button>
+        </div>
+        <div class="game-zone__picker__part picker">
+          <h3 class="part__title">THE HOUSE PICKED</h3>
+          <img id="aiHand" class="part__img" src="img/oval.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>
