@@ -1,4 +1,5 @@
 import { aiChooser } from "./ai-chooser.js";
+import { checkWinner } from "./check-winner.js";
 import {
   elAiHand,
   elGameZone,
@@ -22,8 +23,8 @@ elHands.forEach((hand) => {
 
     setTimeout(function () {
       elAiHand.src = `img/${chosenHandAi}.svg`;
+      console.log(checkWinner(chosenHand.alt, chosenHandAi));
       const currentAction = checkWinner(chosenHand.alt, chosenHandAi);
-      uiChangerByWinner(currentAction);
     }, 1000);
     uiChanger("elGameZone");
   });
